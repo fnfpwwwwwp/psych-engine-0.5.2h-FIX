@@ -20,21 +20,13 @@ class FlxVideo extends FlxBasic
 	{
 		super();
 
-		// text = new FlxText(0, 0, 0, "Video Exited! Tap to Continue", 48);
-		// text.screenCenter();
-		// text.alpha = 0;
-		// add(text);
+		 text = new FlxText(0, 0, 0, "Video Exited! Tap to Continue", 48);
+		 text.screenCenter();
+		 text.alpha = 0;
+		 add(text);
+		 nextState = toTrans;
+		 FlxG.autoPause = false;
 
-		// will fix later -Daninnocent
-
-		// nextState = toTrans;
-
-		//FlxG.autoPause = false;
-
-		WebView.onClose=onClose;
-		WebView.onURLChanging=onURLChanging;
-
-		WebView.open(androidPath + source + '.html', false, null, ['http://exitme(.*)']);
 	}
 
 	public override function update(dt:Float) {
