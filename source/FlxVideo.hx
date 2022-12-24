@@ -1,10 +1,8 @@
 import flixel.text.FlxText;
-// import flixel.FlxState;
+import flixel.FlxState;
 import flixel.FlxG;
-// import flixel.FlxSubState;
+import flixel.FlxSubState;
 import flixel.FlxBasic;
-
-import extension.webview.WebView;
 
 using StringTools;
 
@@ -44,10 +42,10 @@ class FlxVideo extends FlxBasic
 			if (touch.justReleased)
 				if(finishCallback != null) finishCallback();
 
-                // if(FlxG.android.justReleased.BACK)
-                // {
-                //    if(finishCallback != null) finishCallback();
-                // }
+                 if(FlxG.android.justReleased.BACK)
+                {
+                    if(finishCallback != null) finishCallback();
+                 }
 
 		super.update(dt);	
 	}
@@ -59,9 +57,4 @@ class FlxVideo extends FlxBasic
 			finishCallback();
 		}
 	 }
-
-	function onURLChanging(url:String) {
-		if (url == 'http://exitme/') if(finishCallback != null) finishCallback(); // drity hack lol
-		trace("WebView is about to open: "+url);
-	}
 }
