@@ -17,7 +17,7 @@ class FlxVideo extends FlxBasic
 			if (finishCallback != null)
 				finishCallback();
 		}
-		video.playVideo(SUtil.getStorageDirectory() + path, false, false);
+		video.playVideo(SUtil.getPath() + path, false, false);
 		else
 		if (finishCallback != null)
 			finishCallback();
