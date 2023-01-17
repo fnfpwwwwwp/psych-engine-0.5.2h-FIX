@@ -7,6 +7,7 @@ class FlxVideo extends FlxBasic
 {
 	public var finishCallback:Void->Void = null;
 
+	#if VIDEOS_ALLOWED
 	public function new(path:String)
 	{
 		super();
@@ -18,8 +19,9 @@ class FlxVideo extends FlxBasic
 				finishCallback();
 		}
 		video.playVideo(SUtil.getPath() + path, false, false);
-		else
+		#else
 		if (finishCallback != null)
 			finishCallback();
 	}
+	#end
 }
